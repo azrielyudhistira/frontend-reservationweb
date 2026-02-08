@@ -1,0 +1,202 @@
+/* RESET DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333;
+}
+
+/* HEADER */
+.custom-header {
+    background: #52357B;
+    padding: 14px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.back-button {
+    border: 2px solid #FFCC00;
+    color: #FFCC00;
+    padding: 6px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.back-button:hover {
+    background: #FFCC00;
+    color: #fff;
+}
+
+/* MAIN CONTAINER */
+.main-content-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-content-container .row {
+    align-items: flex-start;
+}
+
+/* IMAGE */
+.hero-image-col img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* CARD FASILITAS */
+.facilities {
+    background: #fff;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #52357B;
+    margin-bottom: 16px;
+}
+
+/* LIST FASILITAS */
+.fasilitas-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fasilitas-container li {
+    line-height: 2;
+    font-size: 0.95rem;
+}
+
+/* HARGA */
+.price {
+    margin: 20px 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #FF5733;
+}
+
+.price span {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: 400;
+}
+
+/* JADWAL */
+.days,
+.schedule {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.day-button,
+.time-button {
+    background: #52357B;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.day-button:hover,
+.time-button:hover {
+    background: #6a4aa3;
+}
+
+/* STATE TERPILIH */
+.booked {
+    background: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed;
+}
+
+/* CTA */
+.booking-button-wrapper {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.booking-button {
+    background: #FF5733;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.booking-button:hover {
+    background: #e04b2c;
+}
+
+/* DESKRIPSI & LOKASI */
+.description,
+.location {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.description p,
+.location p {
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 12px;
+    background: #FFCC00;
+    color: #333;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* FOOTER */
+.footer {
+    background: #52357B;
+    color: #fff;
+    padding: 40px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .main-content-container {
+        margin-top: 20px;
+    }
+
+    .hero-image-col {
+        margin-bottom: 24px;
+    }
+}

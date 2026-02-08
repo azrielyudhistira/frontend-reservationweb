@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="custom-header">
+    <div class="header-row">
+        <a href="kategorifutsal.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </a>
+        <h1 class="header-title">Inaka Futsal</h1>
+        <div class="header-spacer"></div>
+    </div>
+</header>
+
+<main class="main-content-container">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 hero-image-col">
+            <img src="Inaka Futsal.webp" alt="Lapangan Futsal Inaka Futsal" class="img-fluid">
+        </div>
+
+        <div class="col-lg-6 col-md-12 facilities">
+            <h3 class="section-title">Fasilitas</h3>
+
+            <div class="fasilitas-container d-flex justify-content-start flex-wrap">
+                <ul class="fas-satu me-4">
+                    <li>Coffee & Resto</li>
+                    <li>Parkir Mobil & Motor</li>
+                    <li>Ruang Ganti</li>
+                </ul>
+                <ul class="fas-dua">
+                    <li>Mushola</li>
+                    <li>Toilet</li>
+                    <li>Wifi</li>
+                </ul>
+            </div>
+
+            <div class="price">Rp 100.000<span>/Sesi</span></div>
+
+            <div class="schedule-section mt-4">
+                <h3 class="section-title">Pilih Jadwal</h3>
+
+                <div class="days d-flex flex-wrap gap-2 mb-3">
+                    <button class="btn day-button">Senin</button>
+                    <button class="btn day-button">Selasa</button>
+                    <button class="btn day-button">Rabu</button>
+                    <button class="btn day-button">Kamis</button>
+                    <button class="btn day-button">Jumat</button>
+                    <button class="btn day-button">Sabtu</button>
+                    <button class="btn day-button">Minggu</button>
+                </div>
+
+                <div class="schedule d-flex flex-wrap gap-2">
+                    <button class="btn time-button">60 menit 08:00–09:00</button>
+                    <button class="btn time-button">60 menit 09:00–10:00</button>
+                    <button class="btn time-button">60 menit 10:00–11:00</button>
+                </div>
+
+                <div class="booking-button-wrapper">
+                    <a href="javascript:void(0);" class="booking-button" id="mainBookingButton">
+                        Booking Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="description">
+    <h3 class="section-title">Inaka Futsal</h3>
+    <p>
+        Inaka Futsal merupakan lapangan olahraga futsal di daerah Kabupaten Bogor
+        yang berdiri sejak tahun 2019.
+    </p>
+</div>
+
+<div class="location">
+    <h3 class="section-title">Lokasi Venue</h3>
+    <p>
+        Jl. Ciomas Harapan No.27 RT.02/02, Ciomas, Kec. Ciomas,
+        Kabupaten Bogor, Jawa Barat 16610, Indonesia
+    </p>
+    <a href="https://maps.app.goo.gl/fW1qe3Ve9HD6RPWb6" class="map-button">Buka Peta</a>
+</div>
+
+<footer class="footer" id="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-logo text-center text-md-start">
+                <h3>SportsSpace</h3>
+                <p>+6282124256311</p>
+                <p>@sspace.id</p>
+                <p>sspaceindonesia@gmail.com</p>
+                <div class="social-icons mt-3">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="col-md-4 footer-links text-center text-md-start">
+                <h4>Perusahaan</h4>
+                <ul>
+                    <li><a href="aboutus.html">Tentang</a></li>
+                    <li><a href="#">Syarat dan Ketentuan</a></li>
+                    <li><a href="#">Kebijakan & Privasi</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 footer-contact text-center text-md-start">
+                <h4>Hubungi Kami</h4>
+                <ul>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const dayButtons = document.querySelectorAll('.day-button');
+    const timeButtons = document.querySelectorAll('.time-button');
+    const mainBookingButton = document.getElementById('mainBookingButton');
+
+    let selectedDayButton = null;
+    let selectedTimeButton = null;
+
+    function checkBookingReadiness() {
+        if (selectedDayButton && selectedTimeButton) {
+            mainBookingButton.removeAttribute('disabled');
+        } else {
+            mainBookingButton.setAttribute('disabled', 'true');
+        }
+    }
+
+    dayButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            if (selectedDayButton) {
+                selectedDayButton.classList.remove('booked');
+                selectedDayButton.removeAttribute('disabled');
+            }
+
+            this.classList.add('booked');
+            this.setAttribute('disabled', 'true');
+            selectedDayButton = this;
+
+            if (selectedTimeButton) {
+                selectedTimeButton.classList.remove('booked');
+                selectedTimeButton.removeAttribute('disabled');
+                selectedTimeButton = null;
+            }
+
+            checkBookingReadiness();
+        });
+    });
+
+    timeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            if (selectedTimeButton) {
+                selectedTimeButton.classList.remove('booked');
+                selectedTimeButton.removeAttribute('disabled');
+            }
+
+            this.classList.add('booked');
+            this.setAttribute('disabled', 'true');
+            selectedTimeButton = this;
+
+            checkBookingReadiness();
+        });
+    });
+
+    mainBookingButton.addEventListener('click', function () {
+        if (!selectedDayButton || !selectedTimeButton) {
+            alert('Mohon pilih hari dan waktu terlebih dahulu.');
+            return;
+        }
+
+        const venue = document.querySelector('.header-title').textContent;
+        const day = selectedDayButton.textContent;
+        const time = selectedTimeButton.textContent;
+
+        const url = `payment.html?venue=${encodeURIComponent(venue)}&day=${encodeURIComponent(day)}&time=${encodeURIComponent(time)}`;
+        window.location.href = url;
+    });
+
+    checkBookingReadiness();
+});
+</script>
+
+</body>
+</html>
